@@ -20,6 +20,7 @@ import Team from "../components/Team";
 import IISCMasterSealBlack from "../assets/IISC MasterSealBlack.svg";
 import DeseLogo from "../assets/DeseLogo.svg";
 import EventTimeline from "../components/EventTimeline";
+import ScrollToTopButton from "../components/Scrolltotopbutton";
 
 const Home = () => {
   return (
@@ -296,7 +297,9 @@ const Home = () => {
           <div id="sponsors-section" className="mt-8 sm:mt-10 md:mt-12">
             <Sponsors />
           </div>
-        </div>
+      
+        <ScrollToTopButton/>
+      </div>
       
     </>
   );
