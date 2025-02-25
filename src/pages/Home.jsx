@@ -33,7 +33,7 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setIsVisible(offset > 100); // Show button after scrolling down 300px
+    setIsVisible(offset > 100); // Show button after scrolling down 100px
   };
 
   useEffect(() => {
@@ -42,6 +42,32 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleNavClick = (item) => {
+    if (item.isPage) {
+      navigate(item.href);
+      if (item.href === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const section = document.getElementById(item.href.replace("#", ""));
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      } else {
+        const section = document.getElementById(item.href.replace("#", ""));
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+    setActiveLink(item.name);
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -108,8 +134,12 @@ const Home = () => {
             <div
               className="absolute bottom-8 animate-bounce animate-infinite animate-duration-2000 animate-ease-in-out cursor-pointer group"
               onClick={() => {
-                const nextSection = document.getElementById("event-highlights");
-                nextSection.scrollIntoView({ behavior: "smooth" });
+                const nextSection = document.getElementById("demos");
+                if (nextSection) {
+                  nextSection.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  console.error("Demos section not found");
+                }
               }}
             >
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center bg-clip-text bg-gradient-to-r from-white to-blue-400 text-transparent">
@@ -191,7 +221,9 @@ const Home = () => {
               action. Witness how ideas come to life and inspire the future!
             </p>
             <Button
-              onClick={() => (window.location.href = "/demo")}
+              onClick={() => {
+                handleNavClick({ href: "/demo", isPage: true });
+              }}
               variant="accent"
               className="py-1 px-2"
             >
