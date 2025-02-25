@@ -14,10 +14,8 @@ const eventsData = [
     title: "Laser Labyrinth",
     date: "01-Mar-2025",
     location: "Room 129, DESE",
-    // description: "Explore our state-of-the-art Smart Grid laboratory featuring renewable energy integration and power system demonstrations.",
     image: Event1,
     type: "tour",
-    // Contact: "Dr. Ramesh Kumar - 98765 43210"
   },
   {
     id: 2,
@@ -25,7 +23,6 @@ const eventsData = [
     date: "01-Mar-2025",
     time: "10:00 AM - 4:00 PM",
     location: "DESE Front Lawn",
-    // description: "Live demonstrations of cutting-edge embedded systems and IoT applications developed by our students.",
     image: Event2,
     type: "exhibition"
   },
@@ -35,10 +32,8 @@ const eventsData = [
     date: "01-Mar-2025",
     time: "11:00 AM - 1:00 PM",
     location: "2nd Floor Staircase",
-    // description: "Interactive session on machine learning applications in medical diagnostics and healthcare systems.",
     image: Event3,
     type: "workshop",
-    // Contact: "Prof. Ananya Sharma - 99876 54321"
   },
   {
     id: 4,
@@ -46,7 +41,6 @@ const eventsData = [
     date: "01-Mar-2025",
     time: "9:30 AM - 5:00 PM", 
     location: "NPTEL Office",
-    // description: "Experience our autonomous robots and robotic arm demonstrations for industrial automation applications.",
     image: Event4,
     type: "exhibition"
   },
@@ -55,10 +49,8 @@ const eventsData = [
     title: "virtual Shooting",
     date: "01-Mar-2025",
     location: "Room 137, DESE",
-    // description: "Display of advanced VLSI chip designs and fabrication techniques developed through student projects.",
     image: Event5,
     type: "exhibition",
-    // Contact: "Dr. Sanjay Patel - 97788 66554"
   },
   {
     id: 6,
@@ -66,7 +58,6 @@ const eventsData = [
     date: "01-Mar-2025", 
     time: "2:30 PM - 4:00 PM",
     location: "Room 134, DESE",
-    // description: "Panel discussion with distinguished alumni sharing industry insights and career opportunities in ECE.",
     image: Event6,
     type: "seminar"
   },
@@ -74,9 +65,7 @@ const eventsData = [
     id: 7,
     title: "Line Follower Context",
     date: "01-Mar-2025", 
-    // time: "2:30 PM - 4:00 PM",
     location: "Room 134, DESE",
-    // description: "Panel discussion with distinguished alumni sharing industry insights and career opportunities in ECE.",
     image: "https://res.cloudinary.com/dosnuagvu/image/upload/v1740487502/WhatsApp_Image_2025-02-25_at_17.34.33_b86e7661_rvu0pk.jpg",
     type: "seminar"
   }
@@ -134,7 +123,7 @@ const Event = () => {
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-contain transform transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
               <div className="relative z-20 p-6 -mt-10">
@@ -186,7 +175,7 @@ const Event = () => {
               <img 
                 src={selectedEvent.image} 
                 alt={selectedEvent.title}
-                className="w-full h-64 object-contain rounded-xl mb-6"
+                className="w-full h-64 object-cover rounded-xl mb-6"
               />
 
               <h3 className="text-3xl font-bold text-white mb-4">{selectedEvent.title}</h3>
@@ -208,11 +197,6 @@ const Event = () => {
                   <RiMapPinLine className="w-5 h-5 text-[#b584fd]" />
                   <span>{selectedEvent.location}</span>
                 </div>
-
-                {/* <div className="pt-4">
-                  <h4 className="text-xl font-semibold text-white mb-2">Description</h4>
-                  <p className="text-gray-300">{selectedEvent.description}</p>
-                </div> */}
 
                 {selectedEvent.Contact && (
                   <div className="pt-2">

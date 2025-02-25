@@ -72,8 +72,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative z-0 min-h-screen bg-gradient-to-b from-[#030418] to-[#0a0b2e]">
-        <div className="fixed z-[-1] inset-0 bg-[#030418]/50">
+      <div className="relative min-h-screen bg-gradient-to-b from-[#030418] to-[#0a0b2e]">
+        <div className="fixed z-[10] inset-0 bg-[#030418]/50">
           <img
             src={IISCBuilding}
             alt="IISC Building"
@@ -173,7 +173,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-[url('/src/assets/tech-pattern.svg')] opacity-5"></div>
           </div>
           <div className="relative z-10 max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-white">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl text-center mb-8 sm:mb-12 md:mb-16 text-white">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FFA500]">
                 Step Into the Future with DESE!
               </span>
@@ -181,18 +181,18 @@ const Home = () => {
             <div className="flex flex-col md:flex-row items-center md:space-x-6 space-y-8 md:space-y-0">
               {/* Text Section - 40% */}
               <div className="w-full md:w-2/5 text-center md:text-left">
-                <p className="text-base sm:text-lg text-gray-200 leading-relaxed p-3 sm:p-4 rounded-xl shadow-lg hover:border-white/30 transition-all duration-300 font-semibold ">
+                <p className="text-base sm:text-lg text-gray-200 leading-relaxed p-3 sm:p-4 rounded-xl shadow-lg hover:border-white/30 transition-all duration-300">
                   {/* DESE (formerly known as CEDT) invites students. */}
                 </p>
                 <p
-                  className="text-base sm:text-lg text-gray-200 leading-relaxed p-3 sm:p-4 rounded-xl shadow-lg hover:border-white/30 transition-all duration-300 font-semibold Amasis MT Pro "
+                  className="text-lg sm:text-xl text-gray-200 leading-relaxed p-3 sm:p-4 rounded-xl shadow-lg hover:border-white/30 transition-all duration-300"
                   style={{ fontFamily: "Amasis MT Pro, sans-serif" }}
                 >
                   IISc's Open Day is an annual event when the Institute opens
                   its doors for the public to visit, learn, and understand
-                  various technological projects and research. DESE (formerly
-                  known as CEDT) invites students, professors, and professionals
-                  from the industry. We look forward to seeing you!
+                  various technological projects and research. <br />
+                  DESE (formerly known as CEDT) invites students, professors, 
+                  and professionals from the industry. We look forward to seeing you!
                 </p>
               </div>
 
