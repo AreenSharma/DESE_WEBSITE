@@ -7,12 +7,18 @@ import FloatingShape from './components/FloatingShape'
 import Footer from './components/Footer'
 import GoldenJubilee from './pages/GoldenJubilee'
 import ScrollToTop from './components/ScrollToTop'
+import SplashCursor from './blocks/Animations/SplashCursor/SplashCursor'
+
 
 const App = () => {
   return (
     <Router>
+      <div className='relative z-5 opacity-10'>
+        
+<SplashCursor />
+      </div>
       <ScrollToTop />
-      <div>
+      <div className='relative z-50'>
         <Navbar />
         <FloatingShape />
         <Routes>

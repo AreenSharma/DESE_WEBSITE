@@ -92,7 +92,7 @@ const GoldenJubilee = () => {
 
       <div className="bg-transparent text-amber-600 text-center py-4 sm:py-6 md:py-8 mt-16 sm:mt-20 md:mt-24">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2 sm:gap-4">
-          <span className="text-4xl sm:text-2xl md:text-4xl font-bold">
+          <span className="text-4xl sm:text-2xl md:text-4xl font-serif font-bold">
             50 Years of Excellence & The Journey of CEDT to DESE
           </span>
         </div>
@@ -127,7 +127,7 @@ const GoldenJubilee = () => {
               />
             </div>
             <div className="w-full md:w-1/2 text-center text-gray-300 md:text-left text-sm md:text-base">
-              <p className="text-lg font-l font-serif">{item.text}</p>
+              <p className="text-lg font-serif">{item.text}</p>
             </div>
           </div>
         ))}
