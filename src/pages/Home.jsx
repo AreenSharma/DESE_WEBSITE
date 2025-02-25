@@ -23,6 +23,7 @@ import EventTimeline from "../components/EventTimeline";
 import { RiArrowUpSLine } from "@remixicon/react";
 import MainGallary from "../components/MainGallary.jsx";
 import chair from "../assets/ChairMan.jpg";
+import { useNavigate, useLocation } from "react-router-dom"; // Import necessary hooks
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -30,6 +31,8 @@ const scrollToTop = () => {
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
+  const location = useLocation(); // Initialize location
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -50,19 +53,17 @@ const Home = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
+      const sectionId = item.href.replace("#", "");
+      const section = document.getElementById(sectionId);
       if (location.pathname !== "/") {
         navigate("/");
         setTimeout(() => {
-          const section = document.getElementById(item.href.replace("#", ""));
           if (section) {
             section.scrollIntoView({ behavior: "smooth" });
           }
         }, 300);
-      } else {
-        const section = document.getElementById(item.href.replace("#", ""));
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
+      } else if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
       }
     }
     setActiveLink(item.name);
@@ -222,7 +223,7 @@ const Home = () => {
             </p>
             <Button
               onClick={() => {
-                handleNavClick({ href: "/demo", isPage: true });
+                handleNavClick({ href: "/demo", isPage: true }); // Fixed href to match the correct route
               }}
               variant="accent"
               className="py-1 px-2"
