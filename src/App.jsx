@@ -13,12 +13,20 @@ import SplashCursor from './blocks/Animations/SplashCursor/SplashCursor'
 const App = () => {
   return (
     <Router>
+<<<<<<< HEAD
       <div className='relative z-5 opacity-10'>
         
 <SplashCursor />
       </div>
       <ScrollToTop />
       <div className='relative z-50'>
+=======
+      <div>
+        <div className='hidden lg:flex'><SplashCursor/></div>
+        
+        <ScrollToTop />
+      <div>
+>>>>>>> 534a21c (SPlash Cursor Updated Sponsors visibility Increased)
         <Navbar />
         <FloatingShape />
         <Routes>

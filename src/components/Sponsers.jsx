@@ -50,7 +50,7 @@ const Sponsors = () => {
             {[...logos, ...logos].map((logo, i) => (
               <div
                 key={i}
-                className="group relative flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 rounded-xl bg-white/30 backdrop-blur-sm border border-white/30 hover:border-white/60 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30"
+                className="group relative flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 rounded-xl bg-white/50 backdrop-blur-sm border border-white/30 hover:border-white/60 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30"
               >
                 <img
                   src={logo}
